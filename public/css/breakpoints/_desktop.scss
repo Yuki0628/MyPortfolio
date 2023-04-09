@@ -1,0 +1,87 @@
+.main-title {
+  font-size: 40px;
+  padding: 30px 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+//汎用的なクラス一覧
+
+
+
+.header {
+  .nav {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  &__btn {
+    display: none;
+  }
+}
+
+
+.index-container {
+  margin-top: 50px;
+.item {
+
+  @include animation($name: index-anime, 
+  $duration:1s,
+  );
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.10s;
+    }
+  }
+}
+}
+
+@keyframes index-anime {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.cards {
+
+  &__content {
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    .card {
+      width: 40%;
+    }
+  }
+}
+
+.works {
+  height: 100vh;
+
+  .works-container {
+
+    .content > .item {
+        margin-bottom: 0;
+    }
+    .content > .item1 {
+        margin-bottom: 50px;
+    }
+  }
+
+  .description__content {
+    top: 27%;
+    left: 27%;
+    width: 50%;
+    font-size: 20px;
+  }
+}
